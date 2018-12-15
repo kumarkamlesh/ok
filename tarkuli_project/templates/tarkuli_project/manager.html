@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manager</title>  
+  <style>
+  .bold{
+    font-size: 35px;
+  }
+  </style>
+</head>
+<body>
+	<form method="post">
+	{% csrf_token %}
+<a  href="{% url 'tarkuli_project:logout'%}">
+                        <b class="bold">Logout</b></a> 
+
+     </form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th >First Name</th>
+      <th >Last Name</th>
+      <th >Email</th>
+      <th >Account</th>
+      <th >Location</th>      
+    </tr>
+  </thead>
+{% for detail in user_detail %}   
+<tbody>
+    <tr>
+      <td><a href="{% url 'tarkuli_project:manager_view' detail.id %}">{{ detail.Firstname}}</td>
+      <td>{{ detail.Lastname}}</td>
+      <td>{{ detail.email}}</td>
+      <td>{{ detail.Account}}</td>
+      <td>{{ detail.Location}}</td>
+    </tr>
+
+{% endfor %}
+
+</body>
+</html>

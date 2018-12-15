@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SuperVisor</title>
+   <style>
+  .bold{
+    font-size: 35px;
+  }
+  </style>
+</head>
+<body>
+	<form method="post">
+	{% csrf_token %}
+<a class="nav-link" href="{% url 'tarkuli_project:logout'%}">
+                        <b class="bold">Logout </b></a> 
+
+     </form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Account</th>
+      <th scope="col">Location</th>      
+    </tr>
+  </thead>
+{% for detail in user_detail %}   
+
+<tbody>
+    <tr>
+      <td>{{ detail.Firstname}}</td>
+      <td>{{ detail.Lastname}}</td>
+      <td>{{ detail.email}}</td>
+      <td>{{ detail.Account}}</td>
+      <td>{{ detail.Location}}</td>
+    </tr>
+
+{% endfor %}
+
+</body>
+</html>

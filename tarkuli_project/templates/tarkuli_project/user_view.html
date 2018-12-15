@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View</title>
+</head>
+<body>
+<h1>Success</h1>
+<form method="post">
+	{% csrf_token %}
+<a class="nav-link" href="{% url 'tarkuli_project:logout'%}">
+                        Logout <span
+                        class="sr-only"></span></a> 
+<table>
+	<tr>
+		<td>
+     <button type="button" value="Manager"> <a class="nav-link" href="{%url 'tarkuli_project:manager'%}">Manager </button><br>
+     	</td>
+     <td>
+     <button type="button" value="Supervisor"><a class="nav-link" href="{%url 'tarkuli_project:supervisor'%}"> Supervisor </button><br>
+ 	</td>
+ 	<td>
+     <button type="button" value="Supervisor 1"> 
+        <a class="nav-link" href="{%url 'tarkuli_project:supervisor2'%}">Supervisor 1 </button><br>
+ 	</td>
+ 	<td>
+     <button type="button" value="Employee"><a class="nav-link" href="{%url 'tarkuli_project:employee'%}"> Employee </button><br>
+ </td>
+
+</table>
+</form>
+
+</body>
+</html>

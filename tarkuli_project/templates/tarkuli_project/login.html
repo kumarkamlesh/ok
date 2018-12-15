@@ -1,0 +1,69 @@
+
+{% load static %}
+<html>
+<head>
+
+    <meta charset="utf-8">
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'first_site/style.css' %}"/> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<style>
+       #mycontainer{
+        background:skyblue;
+        width: 100%;
+        margin:auto;
+        padding: 10px;
+    }
+    .jumbotron{
+        background: #333;   
+        color: #fff;  
+        background-size: cover; 
+        height: 60%;  
+    }
+</style>
+</head>
+<div class="container" id="mycontainer">
+    <div class="col-sm-8" style="width:600px; margin-left:250px; margin-top:50px;">
+
+        <div class="jumbotron" >
+            <div class="form-group" style="margin-top:-50px;">
+                <h2 style="margin-left:150px;">User Login</h2>
+            </div>
+            <hr>
+            <form class="form-horizontal" method="post" action="" style="margin-left:50px;">
+                {% csrf_token %}
+                <div class="form-group input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </span>
+                    <input type="email" class="form-control" name="email" placeholder="Enter email.." required>
+
+                </div>
+                <div class="form-group input-group">
+                     <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                    </span>
+
+                    <input type="password" class="form-control" name="password" placeholder="Enter password..."
+                           required>
+
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox">Remenber me </label>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" style="width:430px;">Login</button>
+                </div>
+                
+
+            </form>
+        </div>
+    </div>
+</div>           
+
+</html>
+
